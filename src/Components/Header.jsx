@@ -20,6 +20,8 @@ export default function Header() {
       ) : (
         <>
           <Link to='/registro'>Registro</Link>
+          <Link to='/productos'>Productos</Link>
+          <Link to='/catalogo'>Catalogo</Link>
 
           <Link to='/login'>Iniciar sesión</Link>
           <Link to='/product'>AgregarProducto</Link>

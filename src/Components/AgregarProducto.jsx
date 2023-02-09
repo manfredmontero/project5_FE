@@ -45,16 +45,22 @@ function AgregarProducto() {
   return (
     <div className='container'>
       <label for='nombre'>Nombre</label>
-      <input name='nombre' className='inputP' type='text' onChange={(e) => handleChange(e)} />
+      <input name='nombre' className='form-control' type='text' onChange={(e) => handleChange(e)} />
       <label for='descripcion'>Descripcion</label>
-      <input name='descripcion' className='inputP' type='text' onChange={(e) => handleChange(e)} />
+      <input name='descripcion' className='form-control' type='text' onChange={(e) => handleChange(e)} />
       <label for='precio'>Precio</label>
-      <input name='precio' className='inputP' type='text' onChange={(e) => handleChange(e)} />
+      <input name='precio' className='form-control' type='text' onChange={(e) => handleChange(e)} />
       <label for='url'>Url</label>
-      <input name='url' className='inputP' type='text' onChange={(e) => handleChange(e)} />
-      <button name='tipo' value='ingreso' className='btn btn-success mr-2' onClick={(e) => handleClick(e)}>
-        Ingreso
-      </button>
+      <input name='url' className='form-control' type='text' onChange={(e) => handleChange(e)} />
+      <div className='row'>
+        <div className='col-sm-6 offset-3'>
+          <div className=''>
+            <button name='tipo' value='ingreso' className='btn btn-success mr-2' onClick={(e) => handleClick(e)}>
+              Guardar Producto
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

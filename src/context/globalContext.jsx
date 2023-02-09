@@ -6,6 +6,8 @@ export const AppContext = createContext()
 export const AppProvider = ({ children }) => {
   const [newBalance, setNewBalance] = useState()
   const [balance, setBalance] = useState()
+  const [productos, setProductos] = useState('')
+
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
   const [newProducto, setNewProducto] = useState()
@@ -86,6 +88,27 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  const getProductos = async () => {
+    try {
+      const res = await clienteAxios.get(`/producto/obtenerproducto`)
+      setProductos(res.data.producto)
+      //console.log(productos)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const deleteProducto = async (id) => {
+    const data = { id }
+
+    try {
+      await clienteAxios.delete(`/producto/borrarproducto`, { data })
+      getBalance()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const data = {
     createBalance,
     getBalance,
@@ -100,8 +123,12 @@ export const AppProvider = ({ children }) => {
     deleteBalance,
     newProducto,
     setNewProducto,
-    addProduct
+    addProduct,
+    getProductos,
+    productos,
+    setProductos,
+    deleteProducto,
   }
-  console.log('CONTEXTO', data)
+  //console.log('CONTEXTO', data)
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>
 }

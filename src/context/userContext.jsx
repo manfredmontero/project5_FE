@@ -65,6 +65,6 @@ export const UserProvider = ({ children }) => {
   }
 
   const data = { registerUser, loginUser, handleChange, verifyingToken, logout, formData, user, authStatus }
-  console.log('CONTEXTO USUARIO', data)
+  //console.log('CONTEXTO USUARIO', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>
 }
