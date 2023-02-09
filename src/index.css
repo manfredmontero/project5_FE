@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cardModified {
+  width: 420px;
+}
+
+.item-right {
+  margin-left: 400px;
+}
+
+.imagen-productos {
+  width: auto;
+  height: 200px;
+}
+
+.card-center {
+  text-align: center;
+}
+
+.drop-login {
+  width: 250px;
+}
+
+.imgLogo{
+  width: 30px;
+  margin-right: 20px;
+}
